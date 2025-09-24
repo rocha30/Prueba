@@ -188,3 +188,28 @@ class Camera:
 
     def __repr__(self):
         return self.__str__()
+
+class Light:
+    def __init__(self, position=(0, 10, 0), color=(1, 1, 1), intensity=1.0):
+        self.position = np.array(position)
+        self.color = np.array(color)
+        self.intensity = intensity
+
+    def set_position(self, x, y, z):
+        """Establece la posición de la luz"""
+        self.position = np.array([x, y, z])
+
+    def set_color(self, r, g, b):
+        """Establece el color de la luz"""
+        self.color = np.array([r, g, b])
+
+    def set_intensity(self, intensity):
+        """Establece la intensidad de la luz"""
+        self.intensity = intensity
+
+    def __str__(self):
+        """Representación en string de la luz"""
+        return f"Light(pos={self.position}, color={self.color}, intensity={self.intensity})"
+
+    def __repr__(self):
+        return self.__str__()
